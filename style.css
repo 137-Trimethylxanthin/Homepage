@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Fira Code:700&display=swap');
+
+:root{
+    <!-- Color Palette -->
+    <!-- Catppuccin machiato -->
+    --Rosewater: #f4dbd6;
+    --Flamingo: #f0c6c6;
+    --Pink: #f5bde6;
+    --Mauve:#c6a0f6;
+    --Red: #ed8796;
+    --Maroon: #ee99a0;
+    --Peach: #f5a97f;
+    --Yellow: #eed49f;
+    --Green: #a6da95;
+    --Teal: #8bd5ca;
+    --Sky: #91d7e3;
+    --Sapphire: #7dc4e4;
+    --Blue: #8aadf4;
+    --Lavender: #b7bdf8;
+    --Text: #cad3f5;
+    --Subtext1: #b8c0e0;
+    --Subtext0: #a5adcb;
+    --Overlay2: #939ab7;
+    --Overlay1: #8087a2;
+    --Overlay0: #6e738d;
+    --Surface2: #5b6078;
+    --Surface1: #494d64;
+    --Surface0: #363a4f;
+    --Base: #24273a;
+    --Mantle: #1e2030;
+    --Crust: #181926;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--Base);
+    color: var(--Text);
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hidden {
+    opacity:0;
+}
+
+.console-container {
+
+    font-family:"Fira Code Retina",Consolas,Monaco,monospace;
+    font-size:8em;
+    text-align:left;
+    height:10vh;
+    width:97vw;
+    display:block;
+    position:absolute;
+    color:var(--Text);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin-left: 3vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.console-underscore {
+    display:inline-block;
+    position:relative;
+    top:-0.14em;
+    left:0.2vw;
+}
+
