@@ -11,7 +11,8 @@ let workingOn = [
     name: "Cold Brew",
     color: "maroon",
     link: "https://github.com/137-Trimethylxanthin/Cold-brew",
-    disciption: "Its a pure Java Music Player",
+    disciption:
+      "Its a pure Java Music Player. <br> Currently Supports: <br> - All local music files (i think) <br> - Jellyfin (currently working on) <br> The idea bhind it was to make it a daemon,<br> that can be controlled via simple teminal commands | http requests",
   },
 ];
 
@@ -27,9 +28,11 @@ let dropped = [];
   <Grid gridCols="2">
     {
       workingOn.map((project) => (
-        <Card href={project.link}>
+        <Card href={project.link} otherClass="min-w-[40vw]">
           <Heading>{project.name}</Heading>
-          <p>{project.disciption}</p>
+          <p class=" self-start ">
+            <Fragment set:html={project.disciption} />
+          </p>
         </Card>
       ))
     }
