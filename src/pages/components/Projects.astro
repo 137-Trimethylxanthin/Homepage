@@ -1,0 +1,37 @@
+---
+import Card from "./Card.svelte";
+import Grid from "./Grid.svelte";
+import Heading from "./Heading.svelte";
+//type 1 = Currently Working on
+//type 2 = Done And Ready
+//type 3 = on hold
+//type 4 = Dropped
+let workingOn = [
+  {
+    name: "Cold Brew",
+    color: "maroon",
+    link: "https://github.com/137-Trimethylxanthin/Cold-brew",
+    disciption: "Its a pure Java Music Player",
+  },
+];
+
+let doneAndReady = [];
+
+let onHold = [];
+
+let dropped = [];
+---
+
+<div class="flex flex-col justify-center items-center">
+  <h3 class="text-4xl">Currently Working On:</h3>
+  <Grid gridCols="2">
+    {
+      workingOn.map((project) => (
+        <Card href={project.link}>
+          <Heading>{project.name}</Heading>
+          <p>{project.disciption}</p>
+        </Card>
+      ))
+    }
+  </Grid>
+</div>

@@ -1,8 +1,14 @@
 ---
+import { string } from "astro/zod";
 import Article from "./components/Article.svelte";
 import Color from "./components/Color.svelte";
+import Socials from "./components/Socials.svelte";
 import SubText from "./components/SubText.svelte";
+import SubTitle from "./components/SubTitle.svelte";
 import Title from "./components/Title.svelte";
+import Projects from "./components/Projects.astro";
+
+
 ---
 
 <html lang="en">
@@ -19,17 +25,37 @@ import Title from "./components/Title.svelte";
       <SubText otherClass="self-start italic"
         >I am a Software Developer, with a passion for coffee (and code).
       </SubText>
-	  <Article>
-        I am Currently attending the 2nd year of the Higher Technical School of Computer Engineering at the <Color color="yellow">HTBLuVA Villach.</Color> <br>
-        There i learn about Software Development, Networking, Databases and much more. <br>
-        The main programming languages i learn there is <Color color="peach">Java</Color>. <br>
-        You can (maybe) find some of my school projects on my <a class="text-red font-bold underline" href="https://gitlab.com/137-Trimethylxanthin">Gitlab</a> <br>
-        <br>
-        I am also working as a Web Developer at <a class="text-cyan-500 font-bold underline" href="https://www.flybyguys.com">Flyby Guys</a> <br>
-        There I use Astro, Svelte, TailwindCSS and TypeScript to build a website. <br>
-        <br>
-        <Socials/>
-    </Article>
+      <Article>
+        I am Currently attending the 2nd year of the Higher Technical School of
+        Computer Engineering at the <Color color="yellow"
+          >HTBLuVA Villach.</Color
+        >
+        <br />
+        There i learn about Software Development, Networking, Databases and much
+        more. <br />
+        The main programming languages i learn there is <Color color="peach"
+          >Java</Color
+        >. <br />
+        You can (maybe) find some of my school projects on my <a
+          class="text-red font-bold underline"
+          href="https://gitlab.com/137-Trimethylxanthin">Gitlab</a
+        >
+        <br />
+        <br />
+        I am also working as a Web Developer at <a
+          class="text-cyan-500 font-bold underline"
+          href="https://www.flybyguys.com">Flyby Guys</a
+        >
+        <br />
+        There I use Astro, Svelte, TailwindCSS and TypeScript to build a website.
+        <br />
+        <br />
+        you can find me here:
+        <Socials />
+      </Article>
+
+      <SubTitle otherClass="self-center">My Projects:</SubTitle>
+      <Projects/>
     </div>
   </body>
 </html>
