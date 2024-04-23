@@ -9,16 +9,10 @@ import Title from "./components/Title.svelte";
 import Projects from "./components/Projects.astro";
 
 
+import Layout from "../layouts/Layout.astro"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Home</title>
-  </head>
+<Layout title="Home">
   <body class="bg-base text-text mocha">
     <div class="flex flex-col text-2xl p-4">
       <Title otherClass="self-start"> Hi I am Maxi. </Title>
@@ -58,4 +52,4 @@ import Projects from "./components/Projects.astro";
       <Projects/>
     </div>
   </body>
-</html>
+</Layout>
