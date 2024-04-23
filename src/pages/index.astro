@@ -1,19 +1,35 @@
 ---
-
+import Article from "./components/Article.svelte";
+import Color from "./components/Color.svelte";
+import SubText from "./components/SubText.svelte";
+import Title from "./components/Title.svelte";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home</title>
-	</head>
-	<body class="bg-base text-text">
-		<div class="flex justify-center items-center flex-col text-2xl">
-			<h1 class="text-8xl text-teal font-bold mb-4"> Lorem, ipsum. </h1>
-			<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus quasi sunt qui!</p>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Home</title>
+  </head>
+  <body class="bg-base text-text mocha">
+    <div class="flex flex-col text-2xl p-4">
+      <Title otherClass="self-start"> Hi I am Maxi. </Title>
+      <SubText otherClass="self-start italic"
+        >I am a Software Developer, with a passion for coffee (and code).
+      </SubText>
+	  <Article>
+        I am Currently attending the 2nd year of the Higher Technical School of Computer Engineering at the <Color color="yellow">HTBLuVA Villach.</Color> <br>
+        There i learn about Software Development, Networking, Databases and much more. <br>
+        The main programming languages i learn there is <Color color="peach">Java</Color>. <br>
+        You can (maybe) find some of my school projects on my <a class="text-red font-bold underline" href="https://gitlab.com/137-Trimethylxanthin">Gitlab</a> <br>
+        <br>
+        I am also working as a Web Developer at <a class="text-cyan-500 font-bold underline" href="https://www.flybyguys.com">Flyby Guys</a> <br>
+        There I use Astro, Svelte, TailwindCSS and TypeScript to build a website. <br>
+        <br>
+        <Socials/>
+    </Article>
+    </div>
+  </body>
 </html>
