@@ -3,6 +3,6 @@
 
 </script>
 
-<div class="flex flex-wrap w-[80vw] space-x-2 {otherClass}">
+<div class="flex flex-wrap w-[84vw] space-x-2 {otherClass}">
     <slot/>
 </div>

@@ -12,24 +12,75 @@ let workingOn = [
     color: "maroon",
     link: "https://github.com/137-Trimethylxanthin/Cold-brew",
     disciption:
-      "Its a pure Java Music Player. <br> Currently Supports: <br> - All local music files (i think) <br> - Jellyfin (currently working on) <br> The idea bhind it was to make it a daemon,<br> that can be controlled via simple teminal commands | http requests",
+      "Its a pure Java Music Player. <br> Currently Supports: <br> - All local music files (i think) <br> - Jellyfin (currently working on) <br> The idea behind it was to make it a daemon,<br> that can be controlled via simple teminal commands | http requests",
+  },
+  {
+    name: "Homepage",
+    color: "maroon",
+    link: "https://github.com/137-Trimethylxanthin/Homepage",
+    disciption:
+      "Just the page you are looking at. <br> Made with Astro and Sveltecompnents.",
   },
 ];
 
-let doneAndReady = [];
+let doneAndReady = [
+  {
+    name: "Codinglab code learner",
+    color: "maroon",
+    link: "https://github.com/137-Trimethylxanthin/HTL-Vill-Codinglab",
+    disciption: "",
+  },
+];
 
-let onHold = [];
-
-let dropped = [];
+let onHold = [
+  {
+    name: "Rust Reverse Shell",
+    color: "maroon",
+    link: "https://github.com/137-Trimethylxanthin/RustReverseShell",
+    disciption: "",
+  },
+];
 ---
 
 <div class="flex flex-col justify-center items-center">
   <h3 class="text-4xl">Currently Working On:</h3>
-  <Grid gridCols="2">
+  <Grid>
     {
       workingOn.map((project) => (
-        <Card href={project.link} otherClass="min-w-[40vw]">
-          <Heading>{project.name}</Heading>
+        <Card href={project.link} otherClass="w-[40vw] flex-shrink h-fit">
+          <Heading otherClass=" self-start justify-self-start text-center mx-auto">
+            {project.name}
+          </Heading>
+          <p class=" self-start ">
+            <Fragment set:html={project.disciption} />
+          </p>
+        </Card>
+      ))
+    }
+  </Grid>
+  <h3 class="text-4xl">Already Done:</h3>
+  <Grid>
+    {
+      doneAndReady.map((project) => (
+        <Card href={project.link} otherClass="w-[20vw] h-fit">
+          <Heading otherClass=" self-start justify-self-start text-center mx-auto">
+            {project.name}
+          </Heading>
+          <p class=" self-start ">
+            <Fragment set:html={project.disciption} />
+          </p>
+        </Card>
+      ))
+    }
+  </Grid>
+  <h3 class="text-4xl">onHold projects:</h3>
+  <Grid>
+    {
+      onHold.map((project) => (
+        <Card href={project.link} otherClass="min-w-[10vw] h-fit">
+          <Heading otherClass=" self-start justify-self-start text-center mx-auto">
+            {project.name}
+          </Heading>
           <p class=" self-start ">
             <Fragment set:html={project.disciption} />
           </p>
