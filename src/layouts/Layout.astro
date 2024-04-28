@@ -1,6 +1,7 @@
 ---
-import ChangeThemeButton from "../components/ChangeThemeButton.svelte";
-
+import ChangeThemeButton from "../pages/components/ChangeThemeButton.svelte";
+import Dropdown from "../pages/components/Dropdown.svelte";
+import DropdownItem from "../pages/components/DropdownItem.svelte";
 ---
 
 <html>
@@ -14,8 +15,15 @@ import ChangeThemeButton from "../components/ChangeThemeButton.svelte";
     <nav
       class="w-[90%] bg-crust py-2 px-4 mx-auto text-2xl rounded-b-xl mb-2 grid grid-cols-3 items-center space-x-4"
     >
-      <div class="justify-self-start">start</div>
-      <div class="justify-self-center">middle</div>
+      <div class="justify-self-start"><a href="/">Home</a></div>
+      <div class="justify-self-center">
+        <Dropdown client:load>
+          Dropdown
+          <DropdownItem>
+            <a href="/wmc">wmc</a>
+          </DropdownItem>
+        </Dropdown>
+      </div>
       <div class="justify-self-end">
         <ChangeThemeButton client:only />
       </div>
