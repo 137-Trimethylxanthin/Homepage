@@ -1,0 +1,25 @@
+body{
+    background-image: url("/static/bg/4kBliss16zu9.jpeg");
+    background-size: cover;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+footer {
+        background:
+            linear-gradient(to bottom, var(--taskbar-border-color) 5%, transparent 20%),
+            var(--taskbar-bg-color);
+        position: absolute;
+        background-size: cover;
+        width: 100vw;
+        height: 40px;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+    }  
+
+
+#startLogo{
+    height: 40px;
+}
