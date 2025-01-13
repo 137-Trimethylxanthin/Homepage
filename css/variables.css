@@ -1,20 +1,4 @@
-:root { /*The default Colors*/
-    --background-color: white;
-        --text-color: black;
-        --name-color: blue;
-            /* Windows XP Logo Colors */
-                --xp-red: #E04B2B;
-                /* Red */
-                --xp-green: #78AE43;
-                /* Green */
-                --xp-blue: #3F83C4;
-                /* Blue */
-                --xp-yellow: #FFD51B;
-                /* Yellow */
 
-                --taskbar-bg-color: #0054e3;
-                --taskbar-border-color: #d4d0c885;
-}
 
 /* Darker Theme */
 .dark-theme {

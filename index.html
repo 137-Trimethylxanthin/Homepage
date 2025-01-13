@@ -5,22 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You are now H O M E</title>
 <link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/windows95.css">
 </head>
 
 <body>
-    <div id="browser">
-        <div class="statusBar">
-
+    <div class="window" id="browser">
+        <div class="status-bar active-window">
+					<img src="static/icons/browser/95/temp_globe.png" alt="">
+					<p>Windows Internet Exploerer</p>
         </div>
+				<div class="menu-bar">
+						<p>File</p>
+						<p>Edit</p>
+						<p>View</p>
+						<p>Favorites</p>
+						<p>Help</p>
+				</div>
+				<div class="dubble-border"></div>
+				<div id="icon-bar-bw">
+					<div class="border"></div>
+					<div class="border"></div>
+					<div class="spacer"></div>
+					<div class="border"></div>
+					<div class="border"></div>
+					<div class="spacer"></div>
+					<div class="border"></div>
+					<div class="border"></div>
+					<div class="spacer"></div>
+					<div class="border"></div>
+					<div class="border"></div>
+					<div class="spacer"></div>
+					<div class="border"></div>
+					<div class="border"></div>
+					<div class="border"></div>
+				</div>
+				<div class="dubble-border"></div>
+				<div id="search-bar">
+					<label for="search">Address: </label>
+					<input  type="text" name="search" id="search" placeholder="Search or type URL">
+					<button class="border" id="search-button">&#8595;</button>
+				</div>
+				<div id="content">
+				</div>
+
+				</div>
     </div>
+
 
     <footer id="taskbar">
         <div id="startButton">
-            <img id="startLogo" src="static/buttons/start/XP_Button_Normal.png" alt="Start">
+            <img id="startLogo" src="static/buttons/start/95/start_button_normal.png" alt="Start">
         </div>
     </footer>
 
+
+		<script src="js/main.js"></script>
 </body>
-<script src="js/main.js"></script>
 </html>

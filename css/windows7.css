@@ -1,0 +1,52 @@
+:root { /*The default Colors*/
+	--background-color: white;
+			--text-color: black;
+			--name-color: blue;
+					/* Windows XP Logo Colors */
+							--xp-red: #E04B2B;
+							/* Red */
+							--xp-green: #78AE43;
+							/* Green */
+							--xp-blue: #3F83C4;
+							/* Blue */
+							--xp-yellow: #FFD51B;
+							/* Yellow */
+
+							--taskbar-bg-color: #0054e3;
+							--taskbar-border-color: #d4d0c885;
+}
+
+body{
+	background-image: url("../static/bg/xp/4kBliss16zu9.jpeg");
+	background-size: cover;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+
+footer {
+			background:
+					linear-gradient(to bottom, var(--taskbar-border-color) 5%, transparent 20%),
+					var(--taskbar-bg-color);
+			position: absolute;
+			background-size: cover;
+			width: 100vw;
+			height: 30px;
+			bottom: 0;
+			left: 0;
+			overflow: hidden;
+	}  
+
+
+#startLogo{
+	height: 30px;
+}
+
+#browser{
+	width: 75vw;
+	height: 75vh;
+	background-color: gray;
+	position: absolute;
+	top: 7.5vh;
+	left: 15vw;
+}
