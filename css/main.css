@@ -1,5 +1,5 @@
 body{
-    background-image: url("/static/bg/4kBliss16zu9.jpeg");
+    background-image: url("../static/bg/4kBliss16zu9.jpeg");
     background-size: cover;
     overflow: hidden;
     width: 100vw;
