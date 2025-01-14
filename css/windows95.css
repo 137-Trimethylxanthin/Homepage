@@ -67,11 +67,11 @@ footer {
 }
 
 #browser{
-	width: 50vw;
+	width: 60vw;
 	height: 75vh;
 	position: absolute;
 	top: 7.5vh;
-	left: 40vw;
+	left: 30vw;
 }
 
 .status-bar {
