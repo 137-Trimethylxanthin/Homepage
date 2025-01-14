@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to load content dynamically
   const loadPage = async (page, addToHistory = true) => {
+      //temp remove the Homepage/ from the pathname
+    page = page.replace("Homepage/", "");
     if (!page || page === "index") {
       content.innerHTML = `<h2>Welcome!</h2><p>Click a link to load a page.</p>`;
       content.innerHTML += `
