@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <nav>
 						<a href="home.html" data-page="home">home</a>
 						<a href="test.html" data-page="test">test</a>
-					</nav>
+				</nav>
       `
     }
   });

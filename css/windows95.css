@@ -74,6 +74,32 @@ footer {
 	left: 30vw;
 }
 
+
+#startButton{
+	display: flex;
+	flex-direction: row;
+	background-color: var(--taskbar-bg-color);
+	align-items: left;
+	border-radius: 0;
+	margin: 0;
+	font-family: thiccwin95;
+	font-size: 15px;
+	padding: 0 5px 0 5px;
+}
+
+#startButton img{
+	width: 28px;
+	height: 28px;
+	margin: 1px 5px 0 0;
+
+}
+
+#startButton:active {
+	box-shadow: inset 2px 0 0 0 black, inset 0 2px 0 0 black, inset -2px 0 0 0 white, inset 0 -2px 0 0 white;
+}
+
+
+
 .status-bar {
 	display: flex;
 	flex-direction:  row;	
@@ -141,12 +167,19 @@ footer {
 }
 
 
-#icon-bar-bw .border {
+#icon-bar-bw button {
+	background-color: var(--window-bg);
+	color: var(--dark-text-color);
+	font-size: 16px;
+	line-height: 1;
+	width: 28px;
+	height: 28px;
+	padding: 0;
 	margin: auto 0;
-
-	width: 24px;
-	height: 24px;
 }
+
+
+
 
 #icon-bar-bw .spacer{
 	width: 8px;
@@ -179,27 +212,35 @@ footer {
 	height: 22px;
 	background-color: #fff;
 	color: var(--dark-text-color);
-	box-shadow: inset -1px 0 0 0 white, inset 0 1px 0 0 black, inset 1px 0 0 0 white, inset 0 -1px 0 0 white;
+	box-shadow: inset -2px 0 0 0 black, inset 0 2px 0 0 black, inset 2px 0 0 0 black;
 
 }
 
 #search-bar button {
-
 	background-color: var(--window-bg);
 	color: var(--dark-text-color);
-	transform: translateX(-24px) translateY(0);
+	transform: translateX(-26px) translateY(1px);
+	font-size: 16px;
+	line-height: 1;
+	margin: 0;
+	
 
 }
 
+
+button:active{
+		box-shadow: inset 2px 0 0 0 black, inset 0 2px 0 0 black, inset -2px 0 0 0 white, inset 0 -2px 0 0 white;
+}
+
 #content {
-	box-shadow: inset 2px 0 0 0 black, inset 0 2px 0 0 black, inset -2px 0 0 0 white, inset 0 -2px 0 0 white;
+	box-shadow: inset 2px 0 0 0 black, inset 0 2px 0 0 black, inset -2px 0 0 0 black;
 	padding: 5px;
 	height: 100%;
 	flex: 1;
 	box-sizing: border-box;
 	background: #fff;
-
 }
+
 
 /*
 WIP only titel
