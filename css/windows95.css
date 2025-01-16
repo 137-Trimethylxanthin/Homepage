@@ -178,6 +178,12 @@ footer {
 	margin: auto 0;
 }
 
+#icon-bar-bw button img {
+	width: 19px;
+	height: 19px;
+	margin: 0;
+	padding: 0;
+}
 
 
 
@@ -219,11 +225,14 @@ footer {
 #search-bar button {
 	background-color: var(--window-bg);
 	color: var(--dark-text-color);
-	transform: translateX(-26px) translateY(1px);
+	transform: translateX(-24px) translateY(1px);
 	font-size: 16px;
 	line-height: 1;
 	margin: 0;
-	
+	height: 22px;
+	width: 22px;
+	padding: 0;
+	align-items: center;
 
 }
 
