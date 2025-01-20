@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Load the correct page on initial load
-  const initialPage = window.location.pathname.slice(1).slice(0, -5) || "home";
+  const initialPage = window.location.pathname.slice(1).slice(0, -5) || "index";
   console.log("initialPage: " + initialPage);
   loadPage(initialPage, false);
 });
