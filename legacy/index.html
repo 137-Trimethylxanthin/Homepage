@@ -6,13 +6,22 @@
 <title>You are now H O M E</title>
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/windows95.css">
+<link rel="stylesheet" href="css/crt.css">
 </head>
 
-<body>
+<body class="">
+    <img class="crt-frame" src="static/img/crt_green_mask.png" alt="" aria-hidden="true">
     <div class="window" id="browser">
-        <div class="status-bar active-window">
+        <div class="status-bar active-window ">
+			<div class="normal-flex">
 					<img src="static/icons/95/Earths/Search on Earth.ico" alt="">
 					<p>Windows Internet Exploerer</p>
+			</div>
+			<div class="normal-flex">
+				<button class="gray-icon" id="minimize" type="button" aria-label="Minimize window">0</button>
+				<button class="gray-icon" id="maximize" type="button" aria-label="Maximize window">1</button>
+				<button class="gray-icon" id="close" type="button" aria-label="Close window">r</button>
+			</div>
         </div>
 				<div class="menu-bar">
 						<p>File</p>
@@ -26,8 +35,8 @@
 					<button class="border"><img src="static/icons/95/custom/IE1/FileOpen.png" alt="File Open"></button>
 					<button class="border"><img src="static/icons/95/custom/IE1/Haus.png" alt="Haus"></button>
 					<div class="spacer"></div>
-					<button class="border"><img src="static/icons/95/custom/IE1/BlackLeft.png" alt="&#x25C4"></button>
-					<button class="border"><img src="static/icons/95/custom/IE1/GrayRight.png" alt="&#x25BA"></button>
+					<button class="border webdings-icon" type="button" aria-label="Back">3</button>
+					<button class="border webdings-icon" type="button" aria-label="Forward">4</button>
 					<div class="spacer"></div>
 					<button class="border"><img src="static/icons/95/custom/IE1/SchredderFile.png" alt="Schredder"></button>
 					<button class="border"><img src="static/icons/95/custom/IE1/SyncFile.png" alt="Sync"></button>
@@ -43,8 +52,7 @@
 				<div id="search-bar">
 					<label for="search">Address: </label>
 					<input  type="text" name="search" id="search" placeholder="Search or type URL">
-					<button class="border" id="search-button"><img src="static/icons/95/custom/IE1/BlackDown.png" alt="&#x25BC;">
-					</button>
+					<button class="border webdings-icon" id="search-button" type="button" aria-label="Address options">6</button>
 				</div>
 				<div id="content">
 					<nav>

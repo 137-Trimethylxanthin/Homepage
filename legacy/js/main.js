@@ -1,3 +1,4 @@
+//The Single Page Loading System for Windows 95 (maybe works for Windows 7)
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("content");
 
@@ -72,3 +73,5 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("initialPage: " + initialPage);
   loadPage(initialPage, false);
 });
+
+

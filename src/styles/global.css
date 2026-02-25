@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "W95FA";
+  src: url("/fonts/95/w95fa.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ThiccWin95";
+  src: url("/fonts/95/MS Sans Serif 8pt bold optimized.woff2") format("woff2");
+  font-display: swap;
+}
+
+.webdings-icon {
+  font-family: Webdings, W95FA, sans-serif;
+  line-height: 1;
+  font-size: 16px;
+}
+
+  .win95-raised {
+    box-shadow:
+      inset 1px 1px 0 #fff,
+      inset -1px -1px 0 #000;
+  }
+
+  .window-icon {
+    font-family: Webdings, W95FA, sans-serif;
+    line-height: 1;
+    background-color: #c0c0c0;
+    color: #000;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    width: 18px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+  }
+
+  .window-icon:active {
+    box-shadow:
+      inset 2px 0 0 0 black,
+      inset 0 2px 0 0 black,
+      inset -2px 0 0 0 white,
+      inset 0 -2px 0 0 white;
+  }
+
+  .title-text {
+    font-family: ThiccWin95, W95FA, sans-serif;
+  }
+
+  .win95-sunken {
+    box-shadow:
+      inset 1px 1px 0 #000,
+      inset -1px -1px 0 #fff;
+  }
+
+   .webdings-icon {
+    font-family: Webdings, W95FA, sans-serif;
+    line-height: 1;
+    font-size: 16px;
+  }
+
+  .toolbar-button {
+    background-color: #c0c0c0;
+    color: #000;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+  }
+
+  .toolbar-button:active {
+    box-shadow:
+      inset 2px 0 0 0 black,
+      inset 0 2px 0 0 black,
+      inset -2px 0 0 0 white,
+      inset 0 -2px 0 0 white;
+  }
