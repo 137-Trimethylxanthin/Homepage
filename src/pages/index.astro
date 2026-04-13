@@ -10,11 +10,12 @@ import Layout from "../layouts/win95/Layout.astro";
     style="font-family: W95FA, 'MS Sans Serif', 'Segoe UI', sans-serif;"
   >
     <ApplicationBorder
+      client:load
       title="Windows Internet Exploerer"
       titleIconSrc="/icons/95/Earths/Search on Earth.ico"
       titleIconAlt=""
     >
-      <Browser startPage="/" />
+      <Browser startPage="https://google.at/" />
     </ApplicationBorder>
   </main>
 </Layout>

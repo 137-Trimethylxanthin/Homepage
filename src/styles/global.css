@@ -7,15 +7,28 @@
 }
 
 @font-face {
+  font-family: "Webdings";
+  src:
+    local("Webdings"),
+    local("Webdings Regular");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
   font-family: "ThiccWin95";
   src: url("/fonts/95/MS Sans Serif 8pt bold optimized.woff2") format("woff2");
   font-display: swap;
 }
 
 .webdings-icon {
-  font-family: Webdings, W95FA, sans-serif;
+  font-family: "Webdings", W95FA, sans-serif;
   line-height: 1;
   font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
 }
 
   .win95-raised {
@@ -25,7 +38,7 @@
   }
 
   .window-icon {
-    font-family: Webdings, W95FA, sans-serif;
+    font-family: "Webdings", W95FA, sans-serif;
     line-height: 1;
     background-color: #c0c0c0;
     color: #000;
@@ -63,9 +76,15 @@
   }
 
    .webdings-icon {
-    font-family: Webdings, W95FA, sans-serif;
+    font-family: "Webdings", W95FA, sans-serif;
     line-height: 1;
     font-size: 16px;
+  }
+
+  .toolbar-button.webdings-icon {
+    font-family: "Webdings", W95FA, sans-serif;
+    font-size: 16px;
+    line-height: 1;
   }
 
   .toolbar-button {

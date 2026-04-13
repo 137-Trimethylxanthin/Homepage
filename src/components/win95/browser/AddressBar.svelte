@@ -1,18 +1,21 @@
 <script lang="ts">
   let {
+    address = $bindable("/"),
     handleAddressChange = $bindable((address: string): void => {}),
-  }: { handleAddressChange?: (address: string) => void } = $props();
+  }: {
+    address?: string;
+    handleAddressChange?: (address: string) => void;
+  } = $props();
 
-  let address: string = $state("/");
-  //bind enter to handleAddressChange
-  $effect(() => {
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        const checkedAddress = address.trim();
-        handleAddressChange(checkedAddress ?? "/");
-      }
-    });
-  });
+  function submitAddress(): void {
+    handleAddressChange(address.trim() || "/");
+  }
+
+  function handleKeydown(event: KeyboardEvent): void {
+    if (event.key === "Enter") {
+      submitAddress();
+    }
+  }
 </script>
 
 <div
@@ -23,12 +26,13 @@
     id="address"
     type="text"
     bind:value={address}
+    onkeydown={handleKeydown}
     class="h-6 flex-1 bg-white px-2 text-sm outline-none win95-sunken"
   />
   <button
     type="button"
     class="webdings-icon toolbar-button"
     aria-label="Address options"
-    onclick={() => handleAddressChange(address)}>4</button
+    onclick={submitAddress}>4</button
   >
 </div>
