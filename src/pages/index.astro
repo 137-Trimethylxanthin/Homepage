@@ -1,21 +1,8 @@
 ---
-import ApplicationBorder from "../components/win95/ApplicationBorder.svelte";
-import Browser from "../components/win95/browser/Browser.svelte";
+import Desktop from "../components/win95/Desktop.svelte";
 import Layout from "../layouts/win95/Layout.astro";
 ---
 
 <Layout title="Index">
-  <main
-    class="relative min-h-screen overflow-hidden bg-[#008080] p-4 text-black md:p-8"
-    style="font-family: W95FA, 'MS Sans Serif', 'Segoe UI', sans-serif;"
-  >
-    <ApplicationBorder
-      client:load
-      title="Windows Internet Exploerer"
-      titleIconSrc="/icons/95/Earths/Search on Earth.ico"
-      titleIconAlt=""
-    >
-      <Browser startPage="https://google.at/" />
-    </ApplicationBorder>
-  </main>
+  <Desktop client:load />
 </Layout>

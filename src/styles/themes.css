@@ -1,0 +1,81 @@
+/* === Win95 Classic Theme === */
+:root,
+.theme-win95 {
+  --theme-desktop-bg: #008080;
+  --theme-window-bg: #c0c0c0;
+  --theme-titlebar-bg: #000080;
+  --theme-titlebar-active-bg: #000080;
+  --theme-titlebar-inactive-bg: #808080;
+  --theme-titlebar-text: #ffffff;
+  --theme-titlebar-inactive-text: #c0c0c0;
+  --theme-button-face: #c0c0c0;
+  --theme-button-highlight: #ffffff;
+  --theme-button-shadow: #808080;
+  --theme-button-dark-shadow: #000000;
+  --theme-button-text: #000000;
+  --theme-taskbar-bg: #c0c0c0;
+  --theme-taskbar-border: #f1f1f1;
+  --theme-taskbar-tray-bg: #c0c0c0;
+  --theme-menu-bg: #c0c0c0;
+  --theme-menu-highlight: #000080;
+  --theme-menu-highlight-text: #ffffff;
+  --theme-desktop-text: #ffffff;
+  --theme-selection-bg: #000080;
+  --theme-selection-text: #ffffff;
+  --theme-context-text: #000000;
+  --theme-start-sidebar: #808080;
+  --theme-start-sidebar-text: #c0c0c0;
+  --theme-window-border-radius: 0px;
+  --theme-button-border-radius: 0px;
+  --theme-font-ui: 'M95', 'W95FA', 'MS Sans Serif', 'Segoe UI', sans-serif;
+  --theme-font-bold: 'ThiccWin95', 'W95FA', 'MS Sans Serif', 'Segoe UI', sans-serif;
+  --theme-font-mono: 'Courier New', monospace;
+  --theme-menu-border: 1px solid #000;
+}
+
+/* === WinXP Luna Theme === */
+.theme-winxp {
+  --theme-desktop-bg: #3a6ea5;
+  --theme-window-bg: #ece9d8;
+  --theme-titlebar-bg: linear-gradient(180deg, #0058e6 0%, #3c8ef0 8%, #6ab3ff 30%, #8cc6ff 50%, #6ab3ff 70%, #3c8ef0 92%, #0058e6 100%);
+  --theme-titlebar-active-bg: linear-gradient(180deg, #0058e6 0%, #3c8ef0 8%, #6ab3ff 30%, #8cc6ff 50%, #6ab3ff 70%, #3c8ef0 92%, #0058e6 100%);
+  --theme-titlebar-inactive-bg: linear-gradient(180deg, #7b9fc7 0%, #9ab5d4 8%, #b8cde4 30%, #c8d9ec 50%, #b8cde4 70%, #9ab5d4 92%, #7b9fc7 100%);
+  --theme-titlebar-text: #ffffff;
+  --theme-titlebar-inactive-text: #d8e4f0;
+  --theme-button-face: #ece9d8;
+  --theme-button-highlight: #ffffff;
+  --theme-button-shadow: #aca899;
+  --theme-button-dark-shadow: #716f64;
+  --theme-button-text: #000000;
+  --theme-taskbar-bg: linear-gradient(180deg, #3168d5 0%, #529cf0 3%, #4a8ce4 50%, #3b7cdb 97%, #2156b3 100%);
+  --theme-taskbar-border: #335ea8;
+  --theme-taskbar-tray-bg: #1a4eb8;
+  --theme-menu-bg: #ffffff;
+  --theme-menu-highlight: #3168d5;
+  --theme-menu-highlight-text: #ffffff;
+  --theme-desktop-text: #ffffff;
+  --theme-selection-bg: #3168d5;
+  --theme-selection-text: #ffffff;
+  --theme-context-text: #000000;
+  --theme-start-sidebar: #2156b3;
+  --theme-start-sidebar-text: #ffffff;
+  --theme-window-border-radius: 8px 8px 0 0;
+  --theme-button-border-radius: 3px;
+  --theme-font-ui: 'Tahoma', 'Segoe UI', sans-serif;
+  --theme-font-bold: 'Tahoma', 'Segoe UI', sans-serif;
+  --theme-font-mono: 'Consolas', 'Courier New', monospace;
+  --theme-menu-border: 1px solid #aca899;
+}
+
+/* Shared utilities */
+.win95-raised {
+  box-shadow:
+    inset 1px 1px 0 var(--theme-button-highlight),
+    inset -1px -1px 0 var(--theme-button-dark-shadow);
+}
+
+.win95-sunken {
+  box-shadow:
+    inset 1px 1px 0 var(--theme-button-dark-shadow),
+    inset -1px -1px 0 var(--theme-button-highlight);
+}

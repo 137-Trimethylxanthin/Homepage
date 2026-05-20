@@ -1,6 +1,18 @@
 <script lang="ts">
   import type { ToolbarIcon } from "../../../lib/entities";
 
+  let {
+    canGoBack = true,
+    canGoForward = true,
+    onBack = () => {},
+    onForward = () => {},
+  }: {
+    canGoBack?: boolean;
+    canGoForward?: boolean;
+    onBack?: () => void;
+    onForward?: () => void;
+  } = $props();
+
   const toolbarIcons: ToolbarIcon[] = [
     {
       kind: "image",
@@ -9,8 +21,16 @@
     },
     { kind: "image", src: "/icons/95/custom/IE1/Haus.png", alt: "Haus" },
     { kind: "spacer" },
-    { kind: "webdings", value: "3", ariaLabel: "Back" },
-    { kind: "webdings", value: "4", ariaLabel: "Forward" },
+    {
+      kind: "image",
+      src: "/icons/95/custom/IE1/BlackLeft.png",
+      alt: "Back",
+    },
+    {
+      kind: "image",
+      src: "/icons/95/custom/IE1/BlackRight.png",
+      alt: "Forward",
+    },
     { kind: "spacer" },
     {
       kind: "image",
@@ -46,17 +66,22 @@
   {#each toolbarIcons as icon}
     {#if icon.kind === "spacer"}
       <div class="mx-1 h-5 w-px bg-[#9f9f9f]"></div>
-    {:else if icon.kind === "webdings"}
+    {:else}
+      {@const isBack = icon.alt === "Back"}
+      {@const isForward = icon.alt === "Forward"}
+      {@const disabled = isBack ? !canGoBack : isForward ? !canGoForward : false}
       <button
         type="button"
-        aria-label={icon.ariaLabel}
-        class="toolbar-button webdings-icon"
+        class="toolbar-button"
+        onclick={isBack ? onBack : isForward ? onForward : undefined}
+        disabled={disabled}
       >
-        {icon.value}
-      </button>
-    {:else}
-      <button type="button" class="toolbar-button">
-        <img src={icon.src} alt={icon.alt} class="size-4" />
+        <img
+          src={icon.src}
+          alt={icon.alt}
+          class="size-4"
+          style={disabled ? "opacity: 0.4" : ""}
+        />
       </button>
     {/if}
   {/each}

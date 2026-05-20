@@ -1,14 +1,14 @@
 <script lang="ts">
   let {
     address = $bindable("/"),
-    handleAddressChange = $bindable((address: string): void => {}),
+    handleAddressChange = $bindable((address: string): Promise<void> => Promise.resolve()),
   }: {
     address?: string;
-    handleAddressChange?: (address: string) => void;
+    handleAddressChange?: (address: string) => Promise<void>;
   } = $props();
 
-  function submitAddress(): void {
-    handleAddressChange(address.trim() || "/");
+  async function submitAddress(): Promise<void> {
+    await handleAddressChange(address.trim() || "/");
   }
 
   function handleKeydown(event: KeyboardEvent): void {
@@ -33,6 +33,6 @@
     type="button"
     class="webdings-icon toolbar-button"
     aria-label="Address options"
-    onclick={submitAddress}>4</button
+    onclick={submitAddress}>▾</button
   >
 </div>

@@ -1,16 +1,11 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "astro",
-  "compatibility_date": "2026-02-25",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "name": "astro",
+  "compatibility_date": "2026-05-20",
   "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
+    "nodejs_compat"
   ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
-	"observability": {
+  "observability": {
     "enabled": true
   }
 }

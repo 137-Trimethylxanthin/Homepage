@@ -1,6 +1,6 @@
 ---
 import "../../styles/global.css";
-import Bar from "../../components/win95/Bar.astro";
+import Taskbar from "../../components/win95/Taskbar.svelte";
 
 interface Props {
   title?: string;
@@ -19,8 +19,11 @@ const { title = "Maxi Homepage" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="m-0 min-h-screen">
+  <body class="m-0 min-h-screen overflow-hidden">
     <slot />
-    <Bar />
+    <Taskbar client:load />
   </body>
+  <script>
+    document.documentElement.classList.add('theme-win95');
+  </script>
 </html>

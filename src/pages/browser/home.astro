@@ -1,5 +1,233 @@
 ---
+const GITHUB_USER = "137-Trimethylxanthin";
 
+interface Repo {
+  name: string;
+  full_name: string;
+  description: string | null;
+  language: string | null;
+  stargazers_count: number;
+  html_url: string;
+  fork: boolean;
+}
+
+interface GitHubUser {
+  name: string;
+  login: string;
+  bio: string | null;
+  company: string | null;
+  location: string | null;
+  public_repos: number;
+  followers: number;
+  following: number;
+}
+
+let user: GitHubUser = {
+  name: "Maxi",
+  login: GITHUB_USER,
+  bio: "Hello 👋 I'm Maxi and these are my code projects. Based in Austria | Villach.",
+  company: "HTBLuVA Villach & FlyBy-Guys",
+  location: "Villach, Austria",
+  public_repos: 21,
+  followers: 8,
+  following: 19,
+};
+
+let repos: Repo[] = [];
+let starsTotal = 0;
+
+try {
+  const [userRes, reposRes] = await Promise.all([
+    fetch(`https://api.github.com/users/${GITHUB_USER}`, {
+      headers: { "User-Agent": "Maxi-Homepage" },
+    }),
+    fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=stars&direction=desc&per_page=8`, {
+      headers: { "User-Agent": "Maxi-Homepage" },
+    }),
+  ]);
+
+  if (userRes.ok) {
+    const data = await userRes.json();
+    user = {
+      name: data.name || "Maxi",
+      login: data.login,
+      bio: data.bio || user.bio,
+      company: data.company || user.company,
+      location: data.location || user.location,
+      public_repos: data.public_repos,
+      followers: data.followers,
+      following: data.following,
+    };
+  }
+
+  if (reposRes.ok) {
+    repos = (await reposRes.json() as Repo[])
+      .filter(r => !r.fork)
+      .slice(0, 6);
+    starsTotal = repos.reduce((sum, r) => sum + r.stargazers_count, 0);
+  }
+} catch {
+  // Use fallback data
+}
+
+const langColors: Record<string, string> = {
+  TypeScript: "#3178c6",
+  JavaScript: "#f1e05a",
+  Rust: "#dea584",
+  Svelte: "#ff3e00",
+  Swift: "#f05138",
+  C: "#555555",
+  "C++": "#f34b7d",
+  Python: "#3572a5",
+  HTML: "#e34c26",
+};
 ---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Welcome to {user.name}'s Homepage!</title>
+</head>
+<body bgcolor="#ffffcc" text="#000000" link="#0000ee" vlink="#551a8b">
 
-HIII2
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="160" valign="top" style="padding:8px;border-right:2px groove #c0c0c0;background:#c0c0c0;">
+  <div style="border:2px inset #fff;padding:4px;background:#fff;text-align:center;margin-bottom:8px;">
+    <div style="width:120px;height:1px;background:repeating-linear-gradient(90deg,#ff0,#ff0 12px,#000 12px,#000 16px);margin:4px auto 2px;"></div>
+    <div style="background:#ffff00;color:#000;font-weight:bold;font-size:11px;padding:2px 4px;text-align:center;border:1px solid #000;display:inline-block;">UNDER CONSTRUCTION</div>
+    <div style="width:120px;height:1px;background:repeating-linear-gradient(90deg,#ff0,#ff0 12px,#000 12px,#000 16px);margin:4px auto 2px;"></div>
+  </div>
+
+  <div style="border:2px inset #fff;padding:6px;background:#fff;margin-bottom:8px;">
+    <div style="font-weight:bold;font-size:12px;text-align:center;margin-bottom:4px;">Navigation</div>
+    <hr size="1" color="#808080" style="margin:2px 0;">
+    <div style="font-size:11px;line-height:1.8;">
+      <a href="/browser/home">Home</a><br/>
+      <a href="/browser/test">Test Page</a><br/>
+      <a href="https://github.com/{GITHUB_USER}" target="_blank">GitHub</a><br/>
+      <a href="https://github.com/{GITHUB_USER}?tab=repositories" target="_blank">Repositories</a>
+    </div>
+  </div>
+
+  <div style="border:2px inset #fff;padding:6px;background:#fff;text-align:center;">
+    <div style="font-weight:bold;font-size:12px;margin-bottom:2px;">Visitors</div>
+    <div style="font-family:monospace;font-size:24px;font-weight:bold;background:#000;color:#0f0;padding:2px 4px;display:inline-block;letter-spacing:2px;">013337</div>
+    <div style="font-size:10px;margin-top:2px;">You are visitor #13,337</div>
+  </div>
+</td>
+
+<td valign="top" style="padding:12px;">
+
+  <div style="text-align:center;margin-bottom:8px;">
+    <h1 style="font-size:32px;font-weight:bold;margin:0;text-shadow:2px 2px 0 #ff0000, 3px 3px 0 #0000ff;color:#ff00ff;line-height:1.2;">Welcome to {user.name}'s Homepage!</h1>
+    <div style="font-size:14px;color:#808080;margin-top:4px;text-shadow:1px 1px 0 #ff00ff;">&#9733; &#9733; The best homepage on the World Wide Web &#9733; &#9733;</div>
+  </div>
+
+  <hr size="2" color="#c0c0c0" style="border:1px solid #808080;">
+
+  <h2 style="font-size:18px;font-weight:bold;margin:8px 0 4px;border-bottom:2px solid #c0c0c0;padding-bottom:3px;">About Me</h2>
+
+  <table border="0" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td width="120" valign="top" style="text-align:center;border:2px inset #fff;padding:8px;background:#fff;">
+      <img src="https://avatars.githubusercontent.com/{GITHUB_USER}?s=120" width="96" height="96" alt="avatar" style="border:1px solid #808080;" />
+      <div style="font-size:9px;color:#808080;font-style:italic;">{GITHUB_USER}.github.jpg</div>
+    </td>
+    <td valign="top" style="padding-left:12px;">
+      <table border="0" cellpadding="2" cellspacing="0">
+      <tr><td valign="top" style="font-weight:bold;font-size:14px;">Name:</td><td style="font-size:14px;">{user.name}</td></tr>
+      <tr><td valign="top" style="font-weight:bold;font-size:14px;">Username:</td><td style="font-size:14px;font-family:monospace;">{user.login}</td></tr>
+      <tr><td valign="top" style="font-weight:bold;font-size:14px;">Location:</td><td style="font-size:14px;">{user.location}</td></tr>
+      <tr><td valign="top" style="font-weight:bold;font-size:14px;">Company:</td><td style="font-size:14px;">{user.company}</td></tr>
+      <tr><td valign="top" style="font-weight:bold;font-size:14px;">Bio:</td><td style="font-size:14px;">{user.bio || "U rn"}</td></tr>
+      </table>
+    </td>
+  </tr>
+  </table>
+
+  <p style="font-size:14px;line-height:1.5;margin:8px 0;">
+    Hey! I'm {user.name.split(" ")[0]}, a software developer from {user.location ? user.location.split(",").pop()?.trim() : "Austria"}. I build things for the web, desktop, and beyond. I love open source and pushing the boundaries of what code can do. When I'm not coding, you'll find me experimenting with new technologies and contributing to the community.
+  </p>
+
+  <h2 style="font-size:18px;font-weight:bold;margin:12px 0 4px;border-bottom:2px solid #c0c0c0;padding-bottom:3px;">GitHub Stats</h2>
+
+  <table border="0" cellpadding="0" cellspacing="4" width="100%">
+  <tr align="center">
+    <td width="33%">
+      <div style="border:2px inset #fff;background:#fff;padding:12px 8px;">
+        <div style="font-size:11px;font-weight:bold;color:#808080;">Repositories</div>
+        <div style="font-size:28px;font-weight:bold;color:#000080;">{user.public_repos}</div>
+        <div style="font-size:10px;color:#808080;">public repos</div>
+      </div>
+    </td>
+    <td width="33%">
+      <div style="border:2px inset #fff;background:#fff;padding:12px 8px;">
+        <div style="font-size:11px;font-weight:bold;color:#808080;">Followers</div>
+        <div style="font-size:28px;font-weight:bold;color:#008000;">{user.followers}</div>
+        <div style="font-size:10px;color:#808080;">people</div>
+      </div>
+    </td>
+    <td width="33%">
+      <div style="border:2px inset #fff;background:#fff;padding:12px 8px;">
+        <div style="font-size:11px;font-weight:bold;color:#808080;">Stars</div>
+        <div style="font-size:28px;font-weight:bold;color:#800000;">{starsTotal}</div>
+        <div style="font-size:10px;color:#808080;">total earned</div>
+      </div>
+    </td>
+  </tr>
+  </table>
+
+  <h2 style="font-size:18px;font-weight:bold;margin:12px 0 4px;border-bottom:2px solid #c0c0c0;padding-bottom:3px;">&#128736; My Projects</h2>
+
+  <table border="0" cellpadding="4" cellspacing="2" width="100%">
+
+  {repos.length > 0 ? repos.map((repo) => (
+    <tr>
+      <td style="border:2px outset #fff;background:#fff;padding:8px;vertical-align:top;">
+        <div style="font-size:14px;font-weight:bold;">
+          <a href={repo.html_url} target="_blank">{repo.name}</a>
+        </div>
+        <div style="font-size:11px;color:#808080;">{repo.full_name}</div>
+        <div style="font-size:12px;margin:4px 0;">{repo.description || "No description"}</div>
+        <div style="font-size:10px;">
+          {repo.language ? (
+            <span style={`background:${langColors[repo.language] || "#808080"};color:#fff;padding:1px 4px;`}>{repo.language}</span>
+          ) : null}
+          {repo.stargazers_count > 0 ? (
+            <span style="margin-left:8px;color:#808080;">&#9733; {repo.stargazers_count}</span>
+          ) : (
+            <span style="margin-left:8px;color:#808080;">&#8902; Pinned</span>
+          )}
+        </div>
+      </td>
+    </tr>
+  )) : (
+    <tr>
+      <td style="border:2px outset #fff;background:#fff;padding:8px;">
+        <div style="font-size:12px;color:#808080;">Loading projects from GitHub...</div>
+      </td>
+    </tr>
+  )}
+
+  </table>
+
+  <hr size="2" color="#c0c0c0" style="border:1px solid #808080;margin-top:16px;">
+
+  <div style="text-align:center;font-size:11px;color:#808080;line-height:1.6;">
+    <p style="margin:4px 0;">&#169; 1995-2026 {user.name}. All rights reserved.</p>
+    <p style="margin:4px 0;">
+      <span style="border:1px solid #808080;padding:1px 4px;">Netscape Now!</span>
+      <span style="border:1px solid #808080;padding:1px 4px;margin-left:4px;">Made with Notepad</span>
+      <span style="border:1px solid #808080;padding:1px 4px;margin-left:4px;">Win95 Compatible</span>
+    </p>
+    <p style="margin:4px 0;">Best viewed in Internet Explorer at 800x600 resolution</p>
+    <p style="margin:4px 0;font-style:italic;">This page was last updated on <span id="last-updated">May 20, 2026</span></p>
+  </div>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
