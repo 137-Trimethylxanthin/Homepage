@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.5.3",
+    "@astrojs/node": "^10.1.1",
     "@astrojs/svelte": "^8.1.1",
     "@astrojs/ts-plugin": "^1.10.9",
     "@tailwindcss/vite": "^4.3.0",

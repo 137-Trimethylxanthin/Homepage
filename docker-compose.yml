@@ -1,0 +1,21 @@
+services:
+  homepage:
+    build: .
+    container_name: homepage
+    restart: unless-stopped
+    ports:
+      - "80:4321"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=4321
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
